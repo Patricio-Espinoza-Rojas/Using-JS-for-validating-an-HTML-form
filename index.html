@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
     <title>Bootstrap demo</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -21,70 +22,78 @@
   </head>
 
   <body>
-    <div class="card w-75 my-5 m-auto">
+    <div class="form card w-75 my-5 m-auto" name="form">
       <div class="card-header">Payment form example</div>
       <div class="card-body">
-        <form class="row g-3">
-          <div class="col-md-5">
-            <label for="inputEmail4" class="form-label">Card #</label>
+        <form class="form row g-3">
+          <div class="col-md-5" id="card_number_group">
+            <label for="cad_number" class="form-label">Card #</label>
             <input
               type="text"
               class="form-control"
-              id="inputEmail4"
-              placeholder="XXXXXXXXXXXXXXXX"
+              name="card_number"
+              id="card_number"
+              placeholder="XXXX-XXXX-XXXX-XXXX"
             />
           </div>
           <div class="col-md-3">
-            <label for="inputEmail4" class="form-label">CVC#</label>
+            <label for="CVC" class="form-label">CVC#</label>
             <input
               type="number"
               class="form-control"
-              id="inputEmail4"
+              name=""
+              name="CVC"
+              id="CVC"
               placeholder="0000"
             />
           </div>
           <div class="col-md-4">
-            <label for="inputPassword4" class="form-label">Amount</label>
+            <label for="amount" class="form-label">Amount</label>
             <i class="fa-solid fa-dollar-sign"></i>
             <input
               type="text"
               class="form-control"
-              id="inputPassword4"
+              name="amount"
+              id="amount"
               placeholder="Amount"
             />
           </div>
           <div class="col-md-6">
-            <label for="inputAddress" class="form-label">First Name</label>
+            <label for="first_name" class="form-label">First Name</label>
             <input
               type="text"
               class="form-control"
+              name="first_name"
+              id="first_name"
               placeholder="First name"
               aria-label="First name"
             />
           </div>
           <div class="col-md-6">
-            <label for="inputAddress2" class="form-label">Last Name</label>
+            <label for="last_name" class="form-label">Last Name</label>
             <input
               type="text"
               class="form-control"
+              name="last_name"
+              id="last_name"
               placeholder="Last name"
               aria-label="Last name"
             />
           </div>
           <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity" />
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" name="city" id="city" />
           </div>
           <div class="col-md-3">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
+            <label for="state" class="form-label">State</label>
+            <select name="state" id="state" class="form-select">
               <option selected>Choose...</option>
               <option>...</option>
             </select>
           </div>
           <div class="col-md-3">
-            <label for="inputZip" class="form-label">Postal Code</label>
-            <input type="text" class="form-control" id="inputZip" />
+            <label for="postal_code" class="form-label">Postal Code</label>
+            <input type="text" class="form-control" name="postal_code" id="postal_code" />
           </div>
           <div class="col-md-6">
             <label class="form-check-label" for="gridCheck"> We accept: </label>
@@ -93,8 +102,8 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
+                  name="we_acept"
+                  id="we_acept"
                   value="option1"
                 />
                 <label class="form-check-label" for="inlineRadio1"
@@ -140,28 +149,27 @@
             </div>
           </div>
           <div class="col-md-6">
-            <label class="form-check-label" for="gridCheck"> Message: </label>
+            <label class="form-check-label" for="message"> Message: </label>
             <textarea
-              name=""
-              id=""
+              name="message"
+              id="message"
               cols="30"
               rows="5"
               class="form-control my-2"
             ></textarea>
           </div>
+
+          <div class="button_group card-footer text-muted d-flex justify-content-end">
+            <button type="submit" id="cancel_button" name="cancel_button" class="btn btn-secondary mx-1">Cancel</button>
+            <button type="submit" id="send_button" name="send_button" class="btn btn-primary mx-1">Send</button>
+          </div>
+        </div>
+
         </form>
       </div>
 
-      <div class="card-footer text-muted d-flex justify-content-end">
-        <button type="submit" class="btn btn-secondary mx-1">Cancel</button>
-        <button type="submit" class="btn btn-primary mx-1">Send</button>
-      </div>
-    </div>
+      
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
+    <script src="/formulario.js" ></script>
   </body>
 </html>

@@ -1,0 +1,15 @@
+.error {
+    background-color: brown;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.correct {
+    background-color: green;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    text-transform: uppercase;
+}
