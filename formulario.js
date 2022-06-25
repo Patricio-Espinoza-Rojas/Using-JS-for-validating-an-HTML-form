@@ -10,6 +10,7 @@ const data = {
     we_acept: '',
     message: ''
 }
+
 const card_number = document.querySelector('#card_number');
 const CVC = document.querySelector('#CVC');
 const amount = document.querySelector('#amount');
@@ -38,9 +39,11 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // form validation
-    const {first_name, last_name, message} = data;
+    const {card_number, CVC, amount, first_name, last_name, city, state, postal_code, 
+           we_acept, message} = data;
     //first alert
-    if(first_name == '' || last_name == '' || message == '' ) {
+    if(card_number == '' || CVC == '' || amount == '' || first_name == '' || last_name == '' || 
+       city == '' || state == '' || postal_code == '' || we_acept == '' || message == '' ) {
         show_alert('todos los campos son obligatorios', 'error');
 
         return;
