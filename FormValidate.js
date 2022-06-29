@@ -94,8 +94,6 @@ if(empty.test(message.value)){
 
 
 
-
-
 console.log(errors);
     if(errors.length > 0){
         errors.forEach(({ item, message, input }) => {
