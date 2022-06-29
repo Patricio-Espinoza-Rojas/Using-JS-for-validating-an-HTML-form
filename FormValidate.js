@@ -14,17 +14,17 @@ let city = document.querySelector('#city');
 let state = document.querySelector('#state');
 let postal_code = document.querySelector('#postal_code');
 let we_acept = document.querySelector('#we_acept');
-let message = document.querySelector('#message');
+let msj = document.querySelector('#msj');
 
 let empty = /^$/;
-let formatcard = /^[0-9]{16,}$/;
+let formatcard = /(\d{4}[-. ]?){4}|\d{4}[-. ]?\d{6}[-. ]?\d{5}/;
 let formatCVC = /^[0-9]{3,}$/;
-let formatamount = /^[0-9]{1,13}$/;
-let formatfirst_name = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
-let formatlast_name = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+let formatamount = /^(([1-9]+)(?:([,]?\d{3})|\d?)+(\.\d+)?)|^0{1}\.(0+)?[1-9]+(0+)?$/;
+let formatfirst_name = /^([a-z ,.'-ñáéíóú]{2,60})$/;
+let formatlast_name = /^([a-z ,.'-ñáéíóú]{2,60})$/;
 let formatcity = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
 let formatpostal_code =/(\d{5}([\-]\d{4})?)/ ;
-let formatmessage = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,500}$ /; 
+let formatmsj = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,500}$/; 
 
 if(empty.test(card_number.value)){
     errors.push({ item: 'card_number', message: 'El campo no puede estar vacio!', input: card_number })
@@ -84,15 +84,13 @@ if(empty.test(postal_code.value)){
 }
 
 
-if(empty.test(message.value)){
-    errors.push({ item: 'message', message: 'El campo no puede estar vacio!', input: message })
-}else if(!formatmessage.test(message.value)){
-    errors.push({ item: 'message', message: 'El campo debe ser un numero valido!', input: message})
+if(empty.test(msj.value)){
+    errors.push({ item: 'msj', message: 'El campo no puede estar vacio!', input: msj })
+}else if(!formatmsj.test(msj.value)){
+    errors.push({ item: 'msj', message: 'El campo debe ser un numero valido!', input: msj})
 }else{
-    message.classList.remove('is-invalid');
+    msj.classList.remove('is-invalid');
 }
-
-
 
 console.log(errors);
     if(errors.length > 0){
