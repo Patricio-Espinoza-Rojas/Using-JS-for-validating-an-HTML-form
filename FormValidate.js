@@ -18,7 +18,13 @@ let message = document.querySelector('#message');
 
 let empty = /^$/;
 let formatcard = /^[0-9]{16,}$/;
-let formatCVC = ;
+let formatCVC = /^[0-9]{3,}$/;
+let formatamount = /^[0-9]{1,13}$/;
+let formatfirst_name = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+let formatlast_name = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+let formatcity = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+let formatpostal_code =/(\d{5}([\-]\d{4})?)/ ;
+let formatmessage = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,500}$ /; 
 
 if(empty.test(card_number.value)){
     errors.push({ item: 'card_number', message: 'El campo no puede estar vacio!', input: card_number })
@@ -27,6 +33,66 @@ if(empty.test(card_number.value)){
 }else{
     card_number.classList.remove('is-invalid');
 }
+
+if(empty.test(CVC.value)){
+    errors.push({ item: 'CVC', message: 'El campo no puede estar vacio!', input: CVC })
+}else if(!formatCVC.test(CVC.value)){
+    errors.push({ item: 'CVC', message: 'El campo debe ser un numero valido!', input: CVC})
+}else{
+    CVC.classList.remove('is-invalid');
+}
+
+if(empty.test(amount.value)){
+    errors.push({ item: 'amount', message: 'El campo no puede estar vacio!', input: amount })
+}else if(!formatamount.test(amount.value)){
+    errors.push({ item: 'amount', message: 'El campo debe ser un numero valido!', input: amount})
+}else{
+    amount.classList.remove('is-invalid');
+}
+
+if(empty.test(first_name.value)){
+    errors.push({ item: 'first_name', message: 'El campo no puede estar vacio!', input: first_name })
+}else if(!formatfirst_name.test(first_name.value)){
+    errors.push({ item: 'first_name', message: 'El campo debe ser un numero valido!', input: first_name})
+}else{
+    first_name.classList.remove('is-invalid');
+}
+
+if(empty.test(last_name.value)){
+    errors.push({ item: 'last_name', message: 'El campo no puede estar vacio!', input: last_name })
+}else if(!formatlast_name.test(last_name.value)){
+    errors.push({ item: 'last_name', message: 'El campo debe ser un numero valido!', input: last_name})
+}else{
+    last_name.classList.remove('is-invalid');
+}
+
+if(empty.test(city.value)){
+    errors.push({ item: 'city', message: 'El campo no puede estar vacio!', input: city })
+}else if(!formatcity.test(city.value)){
+    errors.push({ item: 'city', message: 'El campo debe ser un numero valido!', input: city})
+}else{
+    city.classList.remove('is-invalid');
+}
+
+
+if(empty.test(postal_code.value)){
+    errors.push({ item: 'postal_code', message: 'El campo no puede estar vacio!', input: postal_code })
+}else if(!formatpostal_code.test(postal_code.value)){
+    errors.push({ item: 'postal_code', message: 'El campo debe ser un numero valido!', input: postal_code})
+}else{
+    postal_code.classList.remove('is-invalid');
+}
+
+
+if(empty.test(message.value)){
+    errors.push({ item: 'message', message: 'El campo no puede estar vacio!', input: message })
+}else if(!formatmessage.test(message.value)){
+    errors.push({ item: 'message', message: 'El campo debe ser un numero valido!', input: message})
+}else{
+    message.classList.remove('is-invalid');
+}
+
+
 
 
 
