@@ -1,4 +1,4 @@
-/* .errors {
+     /* .item {
     background-color: brown;
     text-align: center;
     padding: 1rem;
@@ -12,4 +12,11 @@
     padding: 1rem;
     color: white;
     text-transform: uppercase;
+}  */
+
+/* .box {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
 } */
