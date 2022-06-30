@@ -3,7 +3,8 @@ let form = document.querySelector('form');
 form.addEventListener('submit', (evento) => {
     evento.preventDefault();
 
-    let errors = []
+let errors = [];
+let message = [];
     
 let card_number = document.querySelector('#card_number');
 let CVC = document.querySelector('#CVC');
@@ -17,14 +18,14 @@ let we_acept = document.querySelector('#we_acept');
 let msj = document.querySelector('#msj');
 
 let empty = /^$/;
-let formatcard = /(\d{4}[-. ]?){4}|\d{4}[-. ]?\d{6}[-. ]?\d{5}/;
+let formatcard = /^(\d{4}[-. ]?){4}|\d{4}[-. ]?\d{6}[-. ]?\d{5}$/;
 let formatCVC = /^[0-9]{3,}$/;
 let formatamount = /^(([1-9]+)(?:([,]?\d{3})|\d?)+(\.\d+)?)|^0{1}\.(0+)?[1-9]+(0+)?$/;
 let formatfirst_name = /^([a-z ,.'-ñáéíóú]{2,60})$/;
 let formatlast_name = /^([a-z ,.'-ñáéíóú]{2,60})$/;
 let formatcity = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
-let formatpostal_code =/(\d{5}([\-]\d{4})?)/ ;
-let formatmsj = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,500}$/; 
+let formatpostal_code =/^[0-9]{5}-?[0-9]{3}$/;
+let formatmsj = /^[\w\d\s\.\'\,\-\!\@\#\$\&\*\`\~\[\]\?\<\>\"\:\;\\\/\{\}\|\%\^\(\)\+\=]{4,500}$/; 
 
 if(empty.test(card_number.value)){
     errors.push({ item: 'card_number', message: 'El campo no puede estar vacio!', input: card_number })
@@ -101,39 +102,7 @@ console.log(errors);
     } else {
         form.submit();
     }
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // const data = {
