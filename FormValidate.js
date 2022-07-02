@@ -5,7 +5,7 @@ form.addEventListener('submit', (evento) => {
 
 let errors = [];
 
-    
+let mensaje_error = document.querySelector('#mensaje_error')    
 let card_number = document.querySelector('#card_number');
 let CVC = document.querySelector('#CVC');
 let amount = document.querySelector('#amount');
@@ -14,7 +14,7 @@ let last_name = document.querySelector('#last_name');
 let city = document.querySelector('#city');
 let state = document.querySelector('#state');
 let postal_code = document.querySelector('#postal_code');
-let we_acept = document.querySelector('#we_acept');
+// let we_acept = document.querySelector('#we_acept');
 let msj = document.querySelector('#msj');
 
 let empty = /^$/;
@@ -108,6 +108,13 @@ if(empty.test(msj.value)){
 }else{
     msj.classList.remove('is-invalid');
 }
+
+
+    if(errors.length>0){
+        let msj = "te faltan campos"
+        document.querySelector('.mensaje_error').innerHTML = msj;
+        mensaje_error.classList.add('is-invalid');
+    }
 
     console.log(errors);
     if(errors.length > 0){
